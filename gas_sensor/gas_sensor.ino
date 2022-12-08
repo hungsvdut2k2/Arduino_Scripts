@@ -11,7 +11,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   val = analogRead(gasPin);
   Serial.println(val, DEC);
-  if(val <= 400) {
+  if(val >= 750) {
     digitalWrite(led, HIGH);
   } else {
     digitalWrite(led, LOW);
