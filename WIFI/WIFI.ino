@@ -5,8 +5,10 @@
 #include <Servo.h>    
 #include <Stepper.h> 
 Servo myservo; 
-#define loaidht DHT22
-DHT dht(D1, loaidht);
+     
+const int DHTTYPE = DHT11;  
+
+DHT dht(D1, DHTTYPE);
 
 const int stepsPerRevolution = 2048;
 Stepper myStepper = Stepper(stepsPerRevolution, D5, D7, D6, D8);
@@ -17,8 +19,8 @@ int val_Gas;
 int val_Line;
 int val_Motion;
 ESP8266WebServer server(80);
-char* ssid = "OchaHouse Tang 2";
-char* pass = "ochahouse";
+char* ssid = "Le Hoang T3";
+char* pass = "12345678";
 
 void docdulieunhietdo() {
   nhietdo = dht.readTemperature();
